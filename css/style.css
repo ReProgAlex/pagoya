@@ -1,133 +1,133 @@
-/* Reseteo básico de márgenes */
+:root {
+  --rojo:        #c0392b;   /* color principal */
+  --rojo-oscuro: #96281b;   /* hover de botones */
+  --texto:       #222222;   /* texto principal */
+  --gris:        #666666;   /* texto secundario */
+  --fondo:       #ffffff;   /* fondo de la pagina */
+  --sombra:      0 2px 6px rgba(0, 0, 0, 0.08);
+  --radio:       8px;       /* redondeo de esquinas */
+}
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #f4f7f6;
-    color: #333;
-    line-height: 1.6;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #222222;
 }
 
-/* Estilos del Header y Navegación */
 header {
-    background-color: #2c3e50;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background-color: var(--fondo);
+  border-bottom: 3px solid var(--rojo);
+  padding: 16px 24px;
 }
 
-header nav ul {
-    display: flex;
-    list-style: none;
+header span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--rojo);
 }
-
-header nav ul li {
-    margin-left: 20px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header nav ul li a:hover {
-    color: #1abc9c;
-}
-
-/* Contenedor Principal */
 main {
-    max-width: 1100px;
-    margin: 20px auto;
-    padding: 0 20px;
+  max-width: 900px;
+  margin: 40px auto;   /* 40px arriba/abajo, auto izq/der = centrado */
+  padding: 0 20px;
+  display: flex;       /* pone los hijos en fila */
+  gap: 24px;           /* espacio entre cards y formulario */
+  align-items: flex-start;
 }
 
-section {
-    margin-bottom: 40px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* PADRE — organiza las cards en columna */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;             /* ocupa la mitad del main */
 }
 
-/* Grid de Libros (Layout) */
-.grid-libros {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+/* HIJO — cada card individual */
+.card {
+  border-left: 4px solid var(--rojo);
+  border-radius: var(--radio);
+  padding: 20px;
+  box-shadow: var(--sombra);
 }
 
-.tarjeta-libro {
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 6px;
-    text-align: center;
-    background: #fff;
+.card h3 {
+  color: var(--rojo);
+  margin-bottom: 8px;
 }
 
-.tarjeta-libro img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
+.card p {
+  color: var(--gris);
+  font-size: 0.9rem;
+  margin-bottom: 12px;
 }
 
-.tarjeta-libro h3 {
-    margin: 10px 0 5px 0;
-    font-size: 1.2rem;
+.card a {
+  color: var(--rojo);
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-.tarjeta-libro .precio {
-    display: block;
-    color: #e74c3c;
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 10px 0;
+form {
+  border-radius: var(--radio);
+  padding: 28px;
+  flex: 1;             /* ocupa la mitad del main */
+  box-shadow: var(--sombra);
+}
+
+form h2 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: var(--radio);
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--rojo);
 }
 
 button {
-    background-color: #1abc9c;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    cursor: pointer;
-    width: 100%;
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: var(--rojo);
+  color: var(--fondo);
+  border: none;
+  border-radius: var(--radio);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 button:hover {
-    background-color: #16a085;
+  background-color: var(--rojo-oscuro);
 }
 
-/* Formulario */
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-form label {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-form input, form textarea {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Footer */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #2c3e50;
-    color: white;
-    margin-top: 40px;
+  text-align: center;
+  padding: 16px;
+  margin-top: 40px;
+  background-color: var(--texto);
+  color: var(--fondo);
+  font-size: 0.9rem;
 }

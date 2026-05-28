@@ -1,71 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Librería / Bookstore</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>PagoYa</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <header>
-        <h1>Bookstore Virtual</h1>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#libros">Libros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <span>PagoYa</span>
+  </header>
 
-    <main>
-        <section id="inicio">
-            <h2>Bienvenidos a nuestra tienda de libros</h2>
-            <p>Encuentra los mejores libros de tecnología, programación y más.</p>
-        </section>
+  <main>
 
-        <section id="libros">
-            <h2>Catálogo de Libros</h2>
-            <div class="grid-libros">
-                <article class="tarjeta-libro">
-                    <img src="https://via.placeholder.com/150" alt="Portada Libro HTML">
-                    <h3>Aprende HTML5 y CSS3</h3>
-                    <p>Autor: Juan Pérez</p>
-                    <span class="precio">$29.99</span>
-                    <button>Añadir al carrito</button>
-                </article>
+    <div class="cards">
+      <div class="card">
+        <h3>Cuenta</h3>
+        <p>Gestiona tus cuentas.</p>
+        <a href="pages/account/list.html">Ver cuentas</a>
+      </div>
 
-                <article class="tarjeta-libro">
-                    <img src="https://via.placeholder.com/150" alt="Portada Libro Git">
-                    <h3>Git & GitHub Profesional</h3>
-                    <p>Autor: María López</p>
-                    <span class="precio">$24.99</span>
-                    <button>Añadir al carrito</button>
-                </article>
-            </div>
-        </section>
+      <div class="card">
+        <h3>Transferencia</h3>
+        <p>Realiza transferencias.</p>
+        <a href="pages/transfer/list.html">Ver transferencias</a>
+      </div>
+        
+      <div class="card">
+        <h3>Pagos</h3>
+        <p>Consulta y realiza tus pagos.</p>
+        <a href="#">Ver pagos</a>
+        </div>
+    </div>
+      
 
-        <section id="contacto">
-            <h2>Contáctanos</h2>
-            <form action="#">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
+    
+    
 
-                <label for="correo">Correo Electrónico:</label>
-                <input type="email" id="correo" name="correo" required>
+    
 
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+    <form>
+      <h2>Iniciar sesion</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Tu nombre completo" required>
+      <label for="email">Correo:</label>
+      <input type="email" id="email" placeholder="tu@correo.com" required>
 
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </main>
+      <label for="password">Contrasena:</label>
+      <input type="password" id="password" placeholder="••••••••" required>
 
-    <footer>
-        <p>&copy; 2026 Bookstore - Todos los derechos reservados.</p>
-    </footer>
+      <button type="submit">Entrar</button>
+    </form>
+
+  </main>
+
+  <footer>
+    <p>© 2026 PagoYa</p>
+  </footer>
 
 </body>
 </html>
