@@ -6,7 +6,185 @@
     <title>Trámite Inteligente Perú</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Guía de Estilos (Style Guidelines) */
+        :root {
+            --primario: #1E3A8A;
+            --acento: #2563EB;
+            --fondo: #F8FAFC;
+            --texto: #1F2937;
+            --texto-secundario: #9CA3AF;
+            --exito: #10B981;
+            --error: #EF4444;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--fondo);
+            color: var(--texto);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--primario);
+        }
+
+        /* Navbar */
+        header {
+            background-color: #ffffff;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--primario);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--texto);
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: var(--acento);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 500;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primario);
+            border: 1px solid var(--primario);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 500;
+        }
+
+        /* Secciones Principales */
+        .view-section {
+            display: none;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        /* Landing Page - Hero */
+        .hero {
+            display: flex;
+            padding: 64px 32px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 14px;
+            margin-bottom: 24px;
+            color: var(--texto-secundario);
+        }
+
+        .hero-image {
+            flex: 1;
+            background-color: #E5E7EB;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--texto-secundario);
+        }
+
+        /* Dashboard de Ciudadano */
+        .dashboard-container {
+            display: flex;
+            height: calc(100vh - 70px);
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            border-right: 1px solid #E5E7EB;
+            padding: 24px 0;
+        }
+
+        .sidebar-item {
+            padding: 12px 24px;
+            cursor: pointer;
+            border-bottom: 1px solid #F3F4F6;
+        }
+
+        .sidebar-item:hover {
+            background-color: var(--fondo);
+            color: var(--acento);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 48px;
+            background-color: var(--fondo);
+        }
+
+        .search-container {
+            background-color: #ffffff;
+            padding: 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            max-width: 600px;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #D1D5DB;
+            border-radius: 4px;
+            font-family: var(--font-body);
+        }
+    </style>
 </head>
 <body>
 
@@ -62,6 +240,15 @@
         </div>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        function showView(viewId) {
+            // Ocultar todas las vistas
+            document.querySelectorAll('.view-section').forEach(el => {
+                el.classList.remove('active');
+            });
+            // Mostrar la vista seleccionada
+            document.getElementById(viewId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
