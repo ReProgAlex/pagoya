@@ -3,69 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Librería / Bookstore</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Trámite Inteligente Perú</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <header>
-        <h1>Bookstore Virtual</h1>
+        <div class="logo">Trámite Inteligente Perú</div>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#libros">Libros</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#" onclick="showView('landing')">Inicio</a></li>
+                <li><a href="#">Catálogo de Trámites</a></li>
+                <li><a href="#">Cómo funciona</a></li>
             </ul>
         </nav>
+        <button class="btn-secondary" onclick="showView('dashboard')">Iniciar sesión</button>
     </header>
 
-    <main>
-        <section id="inicio">
-            <h2>Bienvenidos a nuestra tienda de libros</h2>
-            <p>Encuentra los mejores libros de tecnología, programación y más.</p>
-        </section>
-
-        <section id="libros">
-            <h2>Catálogo de Libros</h2>
-            <div class="grid-libros">
-                <article class="tarjeta-libro">
-                    <img src="https://via.placeholder.com/150" alt="Portada Libro HTML">
-                    <h3>Aprende HTML5 y CSS3</h3>
-                    <p>Autor: Juan Pérez</p>
-                    <span class="precio">$29.99</span>
-                    <button>Añadir al carrito</button>
-                </article>
-
-                <article class="tarjeta-libro">
-                    <img src="https://via.placeholder.com/150" alt="Portada Libro Git">
-                    <h3>Git & GitHub Profesional</h3>
-                    <p>Autor: María López</p>
-                    <span class="precio">$24.99</span>
-                    <button>Añadir al carrito</button>
-                </article>
+    <main id="landing" class="view-section active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Simplifica tus trámites en Perú</h1>
+                <p>Toda la información que necesitas, paso a paso y en un solo lugar.</p>
+                <div style="display: flex; gap: 16px;">
+                    <button class="btn-primary" onclick="showView('dashboard')">Buscar trámite</button>
+                    <button class="btn-secondary">Ver catálogo</button>
+                </div>
             </div>
-        </section>
-
-        <section id="contacto">
-            <h2>Contáctanos</h2>
-            <form action="#">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-
-                <label for="correo">Correo Electrónico:</label>
-                <input type="email" id="correo" name="correo" required>
-
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-
-                <button type="submit">Enviar</button>
-            </form>
+            <div class="hero-image">
+                [Imagen ilustrativa de documentos]
+            </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Bookstore - Todos los derechos reservados.</p>
-    </footer>
+    <main id="dashboard" class="view-section">
+        <div class="dashboard-container">
+            <aside class="sidebar">
+                <div class="sidebar-item"><strong>Dashboard</strong></div>
+                <div class="sidebar-item">Catálogo de Trámites</div>
+                <div class="sidebar-item">Entidades del Estado</div>
+                <div class="sidebar-item" style="margin-top: 24px; color: var(--texto-secundario);">Mi Espacio</div>
+                <div class="sidebar-item">Guías Guardadas</div>
+                <div class="sidebar-item">Historial de Búsqueda</div>
+                <div class="sidebar-item" style="margin-top: auto;" onclick="showView('landing')">Cerrar sesión</div>
+            </aside>
+            <section class="main-content">
+                <h2>¿Qué buscas hoy?</h2>
+                <div class="search-container">
+                    <p>Buscador Predictivo</p>
+                    <div class="search-box">
+                        <input type="text" class="search-input" placeholder="Escribe 'DNI' o intenta con otro término...">
+                        <button class="btn-primary">Buscar</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
+    <script src="script.js"></script>
 </body>
 </html>
